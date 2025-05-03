@@ -31,3 +31,22 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Updated Loader CSS with your custom styling */
+.loader {
+  width: 295px;
+  height: 23px;
+  border-radius: 20px;
+  border: 2px solid white;
+  background: 
+    linear-gradient(to right bottom, #FFEE00, #626F47) 0/0% no-repeat
+    transparent;
+  animation: l2 2s forwards;
+  box-sizing: border-box; /* Ensures border is included in dimensions */
+  overflow: hidden; /* Keeps the gradient contained within rounded borders */
+}
+
+@keyframes l2 {
+  0% { background-size: 0% }
+  100% { background-size: 100% }
+}
