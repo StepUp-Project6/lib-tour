@@ -75,3 +75,109 @@ lib-tour
 └─ tailwind.config.js
 
 ```
+```
+lib-tour
+├─ .eslintrc.json
+├─ jsconfig.json
+├─ next.config.mjs
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ images
+│  │  ├─ gedung-perpus.png
+│  │  ├─ gedung-perpus2.png
+│  │  ├─ layout
+│  │  │  ├─ lantai-1
+│  │  │  │  ├─ dummy-1.png
+│  │  │  │  └─ main.png
+│  │  │  ├─ lantai-2
+│  │  │  │  └─ main.png
+│  │  │  └─ luar
+│  │  │     └─ main.png
+│  │  ├─ profile
+│  │  │  ├─ dummy.png
+│  │  │  ├─ lobby-1.png
+│  │  │  ├─ lobby-2.png
+│  │  │  ├─ lobby-3.png
+│  │  │  └─ lobby_1.png
+│  │  ├─ stepup-logo.png
+│  │  └─ tentang-header.png
+│  ├─ next.svg
+│  ├─ svg
+│  │  ├─ border-right.svg
+│  │  ├─ icon-back.svg
+│  │  ├─ title-underline.svg
+│  │  ├─ tujuan-1.svg
+│  │  ├─ tujuan-2.svg
+│  │  └─ tujuan-3.svg
+│  └─ vercel.svg
+├─ README.md
+├─ src
+│  └─ app
+│     ├─ about
+│     │  ├─ credit
+│     │  │  └─ page.js
+│     │  └─ library
+│     │     └─ page.js
+│     ├─ components
+│     │  ├─ elements
+│     │  │  ├─ Button.jsx
+│     │  │  ├─ CarouselDot.jsx
+│     │  │  ├─ GoalList.jsx
+│     │  │  ├─ InputField.jsx
+│     │  │  ├─ LayoutImageCard.jsx
+│     │  │  ├─ Loader.jsx
+│     │  │  ├─ SubmitButton.jsx
+│     │  │  ├─ SubTitle.jsx
+│     │  │  ├─ TextAreaField.jsx
+│     │  │  └─ TitleHeader.jsx
+│     │  ├─ fragments
+│     │  │  ├─ Background.jsx
+│     │  │  ├─ CarouselControls.jsx
+│     │  │  ├─ ContactFormFields.jsx
+│     │  │  ├─ LayoutGrid.jsx
+│     │  │  ├─ LayoutThumbnail.jsx
+│     │  │  ├─ LoaderProvider.jsx
+│     │  │  ├─ PageHeader.jsx
+│     │  │  └─ Profile.jsx
+│     │  ├─ layouts
+│     │  │  ├─ ContactForm.jsx
+│     │  │  ├─ ImageCarousel.jsx
+│     │  │  ├─ LeadershipTable.jsx
+│     │  │  └─ Navbar.jsx
+│     │  └─ sections
+│     │     ├─ About
+│     │     │  ├─ Leader.jsx
+│     │     │  ├─ LecturerProfile.jsx
+│     │     │  ├─ LibraryProfile.jsx
+│     │     │  └─ WriterProfile.jsx
+│     │     ├─ Contact
+│     │     │  └─ ContactSection.jsx
+│     │     ├─ Landing
+│     │     │  └─ HeroSection.jsx
+│     │     ├─ Layout
+│     │     │  ├─ LayoutContent.jsx
+│     │     │  └─ LayoutList.jsx
+│     │     └─ Location
+│     │        └─ LocationAndAccess.jsx
+│     ├─ contact
+│     │  └─ page.js
+│     ├─ favicon.ico
+│     ├─ globals.css
+│     ├─ layout
+│     │  ├─ page.js
+│     │  └─ [layoutId]
+│     │     └─ page.js
+│     ├─ layout.js
+│     ├─ location
+│     │  └─ page.js
+│     ├─ page.js
+│     ├─ profile
+│     │  └─ page.js
+│     └─ utils
+│        ├─ dataLayout.js
+│        └─ leaders.json
+└─ tailwind.config.js
+
+```
