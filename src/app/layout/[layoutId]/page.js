@@ -1,10 +1,22 @@
-"use client"
+// src/app/layout/[layoutId]/page.js
+import LayoutContent from "@/app/components/sections/Layout/LayoutContent";
+import { dataLayout } from "@/app/utils/dataLayout";
 
-import React from "react";
-import { useParams } from "next/navigation";
-const LayoutId = () => {
-  const { layoutId } = useParams();
-  return <div>LayoutId {layoutId}</div>;
+const LayoutPage = ({ params }) => {
+  const currentLayout = dataLayout.find((layout) =>
+    layout.title.toLowerCase().includes(params.layoutId.replace("-", " "))
+  );
+  console.log(currentLayout.title);
+
+  if (!currentLayout) {
+    return <div>Layout not found</div>;
+  }
+
+  return (
+    <>
+      <LayoutContent title={currentLayout.title} images={currentLayout.image} />
+    </>
+  );
 };
 
-export default LayoutId;
+export default LayoutPage;
