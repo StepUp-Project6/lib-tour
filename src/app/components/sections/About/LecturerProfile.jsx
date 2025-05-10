@@ -22,7 +22,7 @@ const LecturerProfile = () => {
     },
   ];
   return (
-    <div className="px-[70px] py-20">
+    <div className="px-[70px] py-20 bg-gradient-to-br gradient-color">
       <div className="grid grid-cols-2">
         <div className="flex flex-col">
           <SubTitle

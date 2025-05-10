@@ -20,7 +20,7 @@ const LayoutList = () => {
         },
     ]
   return (
-    <div className="flex flex-col px-[70px] gap-[60px] py-20">
+    <div className="flex flex-col px-[70px] gap-[60px] py-20 bg-gradient-to-bl gradient-color-xl">
         {layouts.map((item, index) => (
             <LayoutThumbnail key={index} item={item} />
         ))}

@@ -1,10 +1,11 @@
+
 import React from "react";
 import SubTitle from "../../elements/SubTitle";
 import ContactForm from "../../layouts/ContactForm";
 
 const ContactSection = () => {
   return (
-    <div className="flex flex-col items-center px-[70px] py-20">
+    <div className="flex flex-col items-center px-[70px] py-20 bg-gradient-to-bl gradient-color-2xl">
       <SubTitle
         title={[
           {

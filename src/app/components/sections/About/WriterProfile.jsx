@@ -22,7 +22,10 @@ const WriterProfile = () => {
         }
     ];
   return (
-    <div className="px-[70px] py-20">
+    <div className="relative px-[70px] py-20 bg-gradient-to-bl gradient-color">
+      <div className="absolute right-0">
+        <img src="/images/lamp-grafity.png" alt="" className="w-[300px]" />
+      </div>
       <div className="grid grid-cols-2">
         <div className="">
           <img

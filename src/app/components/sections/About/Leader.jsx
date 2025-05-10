@@ -4,9 +4,11 @@ import leadersData from "../../../utils/leaders.json";
 import SubTitle from "../../elements/SubTitle";
 const Leader = () => {
   return (
-    <div className="px-[70px] pt-10 pb-40">
-      <div className="flex flex-col gap-5">
-        <div className="flex flex-col">
+    <div className="relative px-[70px] pt-10 pb-40 bg-gradient-to-br gradient-color">
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-bl gradient-color"></div>
+      <div className="w-96 h-[580px] rounded-[50%] bg-gray-400/65 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-12 blur-[200px]"></div>
+      <div className="flex flex-col gap-5 ">
+        <div className="flex flex-col ">
           <SubTitle
             title={[
               {

@@ -8,9 +8,10 @@ module.exports = {
   theme: {
     extend: {
       textShadow: {
-        sm: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-        DEFAULT: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-        lg: '3px 3px 6px rgba(0, 0, 0, 0.5)',
+        sm: '1px 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '2px 2px 4px var(--tw-shadow-color)',
+        lg: '4px 4px 8px var(--tw-shadow-color)',
+        xl: '4px 4px 16px var(--tw-shadow-color)',
       },
       colors: {
         primary: "#626F47",

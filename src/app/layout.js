@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "UPT Perpustakaan UPN Veteran Yogyakarta",
-  description: "Website resmi UPT Perpustakaan UPN Veteran Yogyakarta"
+  description: "Website resmi UPT Perpustakaan UPN Veteran Yogyakarta",
 };
 
 export default function RootLayout({ children }) {
@@ -20,10 +20,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className="pt-[89px]">{children}</div>
-        {/* {!isHomePage && <Footer />} */}
-        <FooterWrapper />
+          <Navbar />
+          <div className="pt-[89px]">{children}</div>
+          {/* {!isHomePage && <Footer />} */}
+          <FooterWrapper />
       </body>
     </html>
   );

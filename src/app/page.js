@@ -10,11 +10,11 @@ import HeroSection from "./components/sections/Landing/HeroSection";
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-2 min-h-screen bg-white">
+    <main className="grid grid-cols-2 min-h-full bg-white">
       <LoaderProvider>
         <HeroSection />
       </LoaderProvider>
-      <div className="static mt-[181px]">
+      <div className="static mt-[121px]">
         <Image
           src="/images/gedung-perpus3.png"
           alt=""
@@ -22,7 +22,6 @@ export default function Home() {
           width={602}
           height={508}
         />
-        {/* <div className="bg-primary rounded-r-[107px] w-[107px] h-[509px] absolute top-0 right-0"></div> */}
       </div>
     </main>
   );
