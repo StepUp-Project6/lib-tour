@@ -29,10 +29,9 @@ const LecturerProfile = () => {
             title={[
               {
                 text: "Profil",
-                color: "text-primary",
               },
               {
-                text: "Penulis",
+                text: "Dosen",
                 color: "text-primary",
                 underline: true,
               },

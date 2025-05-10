@@ -17,19 +17,6 @@ const Profile = ({ profile, classname }) => {
         ))}
       </div>
     </div>
-    // <div className="grid grid-rows-4">
-    //   {profile.map((item, index) => (
-    //     <div key={index} className="grid grid-cols-2 justify-items-start">
-    //       <div className="flex justify-between ">
-    //         <p>{item.key}</p>
-    //         <p>:</p>
-    //       </div>
-    //       <div className="flex justify-start">
-    //         <p className="text-left">{item.value}</p>
-    //       </div>
-    //     </div>
-    //   ))}
-    // </div>
   );
 };
 

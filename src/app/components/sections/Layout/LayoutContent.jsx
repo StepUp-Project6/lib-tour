@@ -4,7 +4,6 @@ import LayoutGrid from "../../fragments/LayoutGrid";
 import PageHeader from "../../fragments/PageHeader";
 
 const LayoutContent = ({ title, images }) => {
-  //   const newTitle = title.split(" ", 2);
   const newTitle = title.replace(" ", "|").split("|");
   console.log(newTitle);
   return (

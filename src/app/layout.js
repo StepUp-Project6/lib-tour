@@ -22,7 +22,6 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
           <Navbar />
           <div className="pt-[89px]">{children}</div>
-          {/* {!isHomePage && <Footer />} */}
           <FooterWrapper />
       </body>
     </html>

@@ -6,7 +6,6 @@ const LayoutPage = ({ params }) => {
   const currentLayout = dataLayout.find((layout) =>
     layout.title.toLowerCase().includes(params.layoutId.replace("-", " "))
   );
-  console.log(currentLayout.title);
 
   if (!currentLayout) {
     return <div>Layout not found</div>;

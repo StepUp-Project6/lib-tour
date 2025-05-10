@@ -2,7 +2,6 @@
 "use client";
 
 const LeadershipTable = ({ data }) => {
-  // Split data into left and right columns
   const leftColumn = data.slice(0, 10);
   const rightColumn = data.slice(10);
 

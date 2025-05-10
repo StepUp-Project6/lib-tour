@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base{
   .fill-button {
     @apply bg-primary text-white hover:border hover:border-white text-shadow rounded-lg py-3 px-[26px] hover:shadow-lg hover:shadow-white transition-all
@@ -39,9 +41,6 @@
   }
 }
 
-
-
-/* Updated Loader CSS with your custom styling */
 .loader {
   width: 295px;
   height: 23px;
@@ -51,8 +50,8 @@
     linear-gradient(to right bottom, #FFEE00, #626F47) 0/0% no-repeat
     transparent;
   animation: l2 2s forwards;
-  box-sizing: border-box; /* Ensures border is included in dimensions */
-  overflow: hidden; /* Keeps the gradient contained within rounded borders */
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @keyframes l2 {

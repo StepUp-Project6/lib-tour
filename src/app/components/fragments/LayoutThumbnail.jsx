@@ -20,7 +20,7 @@ const LayoutThumbnail = ({ item }) => {
         {item.name}
       </div>
       <Link href={`${item.link}`}>
-        <Button classname="absolute top-1/2 left-1/2 -translate-x-2/3 -translate-y-1/2 transform bg-primary p-3 border border-white rounded-lg">
+        <Button classname="absolute top-1/2 left-1/2 -translate-x-2/3 -translate-y-1/2 transform bg-primary p-3 rounded-lg hover:border hover:border-white hover:shadow-lg  hover:shadow-primary hover:text-shadow-lg transition-all duration-500 ease-in-out">
           Lihat Sekarang
         </Button>
       </Link>

@@ -39,7 +39,6 @@ const WriterProfile = () => {
             title={[
               {
                 text: "Profil",
-                color: "text-primary",
               },
               {
                 text: "Penulis",

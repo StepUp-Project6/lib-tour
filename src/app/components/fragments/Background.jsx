@@ -21,7 +21,6 @@ const Background = ({
       {overlay && <div className="absolute inset-0 bg-black/20" />}
 
       <div className="relative z-10">
-        {/* <img src="images/gedung-perpus.png" className="inset-0 w-full h-full object-cover" /> */}
         {children}
       </div>
     </div>
