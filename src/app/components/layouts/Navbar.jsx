@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -14,14 +15,21 @@ const Navbar = () => {
     pathname === "/about-library" || pathname === "/about-credit";
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-20">
+    <nav className="bg-white shadow-lg fixed w-full z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-[89px] items-center">
           {/* Left side - Logo & Text */}
           <Link href="/">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <div className="w-10 h-10 bg-white rounded-full"></div>
+                <div className="w-10 h-10 ">
+                  <Image
+                    src="/images/stepup-logo.png"
+                    alt="Logo"
+                    width={40}
+                    height={40}
+                  />
+                </div>
                 <span className="ml-2 text-xl font-bold text-black">
                   LibTour
                 </span>
@@ -70,7 +78,7 @@ const Navbar = () => {
                     }`}
                     onClick={() => setIsAboutOpen(false)}
                   >
-                    Tentang Perpustakaan
+                    Perpustakaan
                   </Link>
                   <Link
                     href="/about/credit"
@@ -81,7 +89,7 @@ const Navbar = () => {
                     }`}
                     onClick={() => setIsAboutOpen(false)}
                   >
-                    Tentang Credit
+                    Credit
                   </Link>
                 </div>
               )}
@@ -113,10 +121,10 @@ const Navbar = () => {
           <div className="hidden md:block border">
             <Link
               href="/contact"
-              className={`border border-white px-4 py-2 rounded-lg transition ${
+              className={`border px-4 py-2 rounded-lg transition ${
                 pathname === "/contact"
                   ? "bg-primary text-white"
-                  : "bg-white border-2 border-gray-950 text-black hover:bg-primary hover:border-white hover:text-white"
+                  : "bg-white border-2 border-gray-950 text-black hover:bg-primary hover:border-white hover:text-white  hover:shadow-lg  hover:shadow-primary hover:text-shadow-lg transition-all duration-500 ease-in-out"
               }`}
             >
               Contact

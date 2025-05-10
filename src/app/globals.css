@@ -6,6 +6,15 @@
   .fill-button {
     @apply bg-primary text-white hover:border hover:border-white text-shadow rounded-lg py-3 px-[26px] hover:shadow-lg hover:shadow-white transition-all
   }
+  .gradient-color {
+    @apply from-gray-400/25 from-10% via-transparent via-25% to-transparent
+  }
+  .gradient-color-xl {
+    @apply from-gray-400/50 from-20% via-transparent via-45% to-transparent
+  }
+  .gradient-color-2xl {
+    @apply from-gray-400/50 from-15% via-transparent via-35% to-transparent
+  }
 }
 
 @layer utilities {

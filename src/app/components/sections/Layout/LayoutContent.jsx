@@ -8,7 +8,7 @@ const LayoutContent = ({ title, images }) => {
   const newTitle = title.replace(" ", "|").split("|");
   console.log(newTitle);
   return (
-    <div className="pb-20">
+    <div className="pb-20 bg-gradient-to-bl gradient-color-xl">
       <PageHeader title="Layout" />
       <div className="flex items-center gap-2 px-[70px] pt-16">
         <Link href="/layout">

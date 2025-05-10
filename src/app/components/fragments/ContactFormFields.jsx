@@ -4,7 +4,7 @@
 import InputField from "../elements/InputField";
 import TextAreaField from "../elements/TextAreaField";
 
-const ContactFormFields = ({ formData, handleChange }) => {
+const ContactFormFields = ({ formData, handleChange, errors = {} }) => {
   return (
     <div className="space-y-8">
       <InputField
@@ -13,6 +13,7 @@ const ContactFormFields = ({ formData, handleChange }) => {
         placeholder="Nama Anda"
         value={formData.nama}
         onChange={handleChange}
+        error={errors.nama}
       />
       <InputField
         label="Email :"
@@ -21,6 +22,7 @@ const ContactFormFields = ({ formData, handleChange }) => {
         placeholder="Email Anda"
         value={formData.email}
         onChange={handleChange}
+        error={errors.email}
       />
       <InputField
         label="Subjek :"
@@ -28,6 +30,7 @@ const ContactFormFields = ({ formData, handleChange }) => {
         placeholder="Subjek"
         value={formData.subjek}
         onChange={handleChange}
+        error={errors.subjek}
       />
       <TextAreaField
         label="Pesan :"
@@ -35,6 +38,7 @@ const ContactFormFields = ({ formData, handleChange }) => {
         placeholder="Tulis pesan Anda di sini... Silakan sampaikan pertanyaan, saran, atau permintaan informasi Anda..."
         value={formData.pesan}
         onChange={handleChange}
+        error={errors.pesan}
       />
     </div>
   );
