@@ -7,7 +7,7 @@ const PageHeader = ({ title }) => {
       <Image
         src="/images/tentang-header.png"
         alt=""
-        className="w-full h-[335px] object-cover"
+        className="w-full h-[255px] object-cover"
         width={1440}
         height={335}
       />

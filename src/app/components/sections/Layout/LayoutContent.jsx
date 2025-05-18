@@ -1,16 +1,19 @@
+"use client"
+
 import Link from "next/link";
 import SubTitle from "../../elements/SubTitle";
 import LayoutGrid from "../../fragments/LayoutGrid";
 import PageHeader from "../../fragments/PageHeader";
+import { useSound } from "@/app/context/SoundContext";
 
 const LayoutContent = ({ title, images }) => {
   const newTitle = title.replace(" ", "|").split("|");
-  console.log(newTitle);
+  const { playClickSound } = useSound();
   return (
     <div className="pb-20 bg-gradient-to-bl gradient-color-xl">
       <PageHeader title="Layout" />
       <div className="flex items-center gap-2 px-[70px] pt-16">
-        <Link href="/layout">
+        <Link href="/layout" type="button" onClick={playClickSound}>
           <img src="/svg/icon-back.svg" alt="" />
         </Link>
       </div>

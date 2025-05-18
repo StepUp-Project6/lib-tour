@@ -1,4 +1,3 @@
-// src/app/components/fragments/CarouselControls.js
 import CarouselDot from '../elements/CarouselDot';
 
 const CarouselControls = ({ count, activeIndex, setActiveIndex }) => {

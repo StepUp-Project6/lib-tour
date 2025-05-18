@@ -1,25 +1,33 @@
 // src/app/components/layouts/Navbar.js
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useSound } from "@/app/context/SoundContext";
 
 const Navbar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const pathname = usePathname();
+  const { playClickSound } = useSound();
 
   // Check if current path matches any of the about pages
   const isAboutActive =
     pathname === "/about-library" || pathname === "/about-credit";
 
+  const handleLinkClick = () => {
+    playClickSound();
+    setIsAboutOpen(false); // Close dropdown if open
+  };
+
   return (
     <nav className="bg-white shadow-lg fixed w-full z-20">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-[89px] items-center">
           {/* Left side - Logo & Text */}
-          <Link href="/">
+          <Link href="/" onClick={handleLinkClick}>
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
                 <div className="w-10 h-10 ">
@@ -42,7 +50,9 @@ const Navbar = () => {
             {/* About Dropdown */}
             <div className="relative">
               <button
-                onClick={() => setIsAboutOpen(!isAboutOpen)}
+                onClick={() => {
+                  setIsAboutOpen(!isAboutOpen);
+                }}
                 className={`flex items-center transition ${
                   isAboutActive
                     ? "text-gray-500"
@@ -76,7 +86,7 @@ const Navbar = () => {
                         ? "text-gray-500"
                         : "text-black hover:text-gray-500"
                     }`}
-                    onClick={() => setIsAboutOpen(false)}
+                    onClick={handleLinkClick}
                   >
                     Perpustakaan
                   </Link>
@@ -87,7 +97,7 @@ const Navbar = () => {
                         ? "text-gray-500"
                         : "text-black hover:text-gray-500"
                     }`}
-                    onClick={() => setIsAboutOpen(false)}
+                    onClick={handleLinkClick}
                   >
                     Credit
                   </Link>
@@ -102,6 +112,7 @@ const Navbar = () => {
                   ? "text-gray-500"
                   : "text-black hover:text-gray-500"
               }`}
+              onClick={handleLinkClick}
             >
               Layout
             </Link>
@@ -112,6 +123,7 @@ const Navbar = () => {
                   ? "text-gray-500"
                   : "text-black hover:text-gray-500"
               }`}
+              onClick={handleLinkClick}
             >
               Lokasi
             </Link>
@@ -124,8 +136,9 @@ const Navbar = () => {
               className={`border px-4 py-2 rounded-lg transition ${
                 pathname === "/contact"
                   ? "bg-primary text-white"
-                  : "bg-white border-2 border-gray-950 text-black hover:bg-primary hover:border-white hover:text-white  hover:shadow-lg  hover:shadow-primary hover:text-shadow-lg transition-all duration-500 ease-in-out"
+                  : "bg-white border-2 border-gray-950 text-black hover:bg-primary hover:border-white hover:text-white hover:shadow-lg hover:shadow-primary hover:text-shadow-lg transition-all duration-500 ease-in-out"
               }`}
+              onClick={handleLinkClick}
             >
               Contact
             </Link>
@@ -133,7 +146,10 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button className="text-black hover:text-gray-500">
+            <button 
+              className="text-black hover:text-gray-500"
+              onClick={playClickSound}
+            >
               <svg
                 className="h-6 w-6"
                 fill="none"

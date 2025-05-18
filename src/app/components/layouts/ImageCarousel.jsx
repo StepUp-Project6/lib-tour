@@ -1,11 +1,40 @@
-// src/app/components/sections/ImageCarousel.js
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import CarouselControls from '../fragments/CarouselControls';
 
 const ImageCarousel = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Function to handle next slide
+  const goToNextSlide = useCallback(() => {
+    setActiveIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  }, [images.length]);
+
+  // Function to handle manual slide change
+  const goToSlide = (index) => {
+    setIsAutoPlaying(false); // Pause auto-play when user interacts
+    setActiveIndex(index);
+    
+    // Resume auto-play after 10 seconds of inactivity
+    const timer = setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 10000);
+    
+    return () => clearTimeout(timer);
+  };
+
+  // Auto-play effect
+  useEffect(() => {
+    let interval;
+    if (isAutoPlaying) {
+      interval = setInterval(goToNextSlide, 3000);
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, goToNextSlide]);
 
   return (
     <div className="relative w-full h-full">
@@ -23,7 +52,7 @@ const ImageCarousel = ({ images }) => {
         <CarouselControls 
           count={images.length} 
           activeIndex={activeIndex} 
-          setActiveIndex={setActiveIndex}
+          setActiveIndex={goToSlide}
         />
       </div>
     </div>

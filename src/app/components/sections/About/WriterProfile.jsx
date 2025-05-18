@@ -27,14 +27,14 @@ const WriterProfile = () => {
         <img src="/images/lamp-grafity.png" alt="" className="w-[300px]" />
       </div>
       <div className="grid grid-cols-2">
-        <div className="">
+        <div className="mx-auto p-4">
           <img
             src="/images/profile/dummy.png"
             className="w-[634px] h-[494px]"
             alt=""
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col pl-14">
           <SubTitle
             title={[
               {
