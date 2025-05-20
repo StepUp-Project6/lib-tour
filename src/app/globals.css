@@ -17,6 +17,9 @@
   .gradient-color-2xl {
     @apply from-gray-400/50 from-15% via-transparent via-35% to-transparent
   }
+  .hover-nav {
+    @apply hover:text-white hover:shadow-lg hover:shadow-primary hover:text-shadow-lg hover:bg-primary hover:py-2 hover:px-4 rounded-lg 
+  }
 }
 
 @layer utilities {

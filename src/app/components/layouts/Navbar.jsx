@@ -9,21 +9,26 @@ import { useSound } from "@/app/context/SoundContext";
 
 const Navbar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isLocationOpen, setIsLocationOpen] = useState(false);
   const pathname = usePathname();
   const { playClickSound } = useSound();
 
   // Check if current path matches any of the about pages
   const isAboutActive =
-    pathname === "/about-library" || pathname === "/about-credit";
+    pathname === "/tentang-perpustakaan" || pathname === "/tentang-credit";
+  
+  // Check if current path matches any of the location pages
+  const isLocationActive =
+    pathname === "/denah" || pathname === "/peta";
 
   const handleLinkClick = () => {
     playClickSound();
     setIsAboutOpen(false); // Close dropdown if open
+    setIsLocationOpen(false); // Close dropdown if open
   };
 
   return (
     <nav className="bg-white shadow-lg fixed w-full z-20">
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-[89px] items-center">
           {/* Left side - Logo & Text */}
@@ -51,13 +56,15 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => {
+                  playClickSound();
                   setIsAboutOpen(!isAboutOpen);
+                  setIsLocationOpen(false); // Close location dropdown
                 }}
                 className={`flex items-center transition ${
-                  isAboutActive
+                  isAboutActive 
                     ? "text-gray-500"
-                    : "text-black hover:text-gray-500"
-                }`}
+                    : "text-black hover-nav transition-all duration-500 ease-in-out"
+                } ${isAboutOpen ? "text-white shadow-lg shadow-primary text-shadow-lg bg-primary py-2 px-4 rounded-lg" : ""}`}
               >
                 Tentang
                 <svg
@@ -80,9 +87,9 @@ const Navbar = () => {
               {isAboutOpen && (
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
                   <Link
-                    href="/about/library"
+                    href="/tentang/perpustakaan"
                     className={`block px-4 py-2 ${
-                      pathname === "/about-library"
+                      pathname === "/tentang-perpustakaan"
                         ? "text-gray-500"
                         : "text-black hover:text-gray-500"
                     }`}
@@ -91,62 +98,111 @@ const Navbar = () => {
                     Perpustakaan
                   </Link>
                   <Link
-                    href="/about/credit"
+                    href="/tentang/kredit"
                     className={`block px-4 py-2 ${
-                      pathname === "/about-credit"
+                      pathname === "/tentang-credit"
                         ? "text-gray-500"
                         : "text-black hover:text-gray-500"
                     }`}
                     onClick={handleLinkClick}
                   >
-                    Credit
+                    Kredit
                   </Link>
                 </div>
               )}
             </div>
 
             <Link
-              href="/layout"
+              href="/virtual-tour"
               className={`transition ${
-                pathname === "/layout"
+                pathname === "/virtual-tour"
                   ? "text-gray-500"
-                  : "text-black hover:text-gray-500"
+                  : "text-black hover-nav transition-all duration-500 ease-in-out"
               }`}
               onClick={handleLinkClick}
             >
-              Layout
+              Virtual Tour
             </Link>
-            <Link
-              href="/location"
-              className={`transition ${
-                pathname === "/location"
-                  ? "text-gray-500"
-                  : "text-black hover:text-gray-500"
-              }`}
-              onClick={handleLinkClick}
-            >
-              Lokasi
-            </Link>
-          </div>
 
-          {/* Right side - Contact Button */}
-          <div className="hidden md:block border">
-            <Link
-              href="/contact"
-              className={`border px-4 py-2 rounded-lg transition ${
-                pathname === "/contact"
-                  ? "bg-primary text-white"
-                  : "bg-white border-2 border-gray-950 text-black hover:bg-primary hover:border-white hover:text-white hover:shadow-lg hover:shadow-primary hover:text-shadow-lg transition-all duration-500 ease-in-out"
-              }`}
-              onClick={handleLinkClick}
-            >
-              Contact
-            </Link>
+            {/* Location Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => {
+                  playClickSound();
+                  setIsLocationOpen(!isLocationOpen);
+                  setIsAboutOpen(false); // Close about dropdown
+                }}
+                className={`flex items-center transition ${
+                  isLocationActive
+                    ? "text-gray-500"
+                    : "text-black hover-nav transition-all duration-500 ease-in-out"
+                } ${isLocationOpen ? "text-white shadow-lg shadow-primary text-shadow-lg bg-primary py-2 px-4 rounded-lg" : ""}`}
+              >
+                Lokasi
+                <svg
+                  className={`ml-1 h-4 w-4 transition-transform ${
+                    isLocationOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {isLocationOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+                  <Link
+                    href="/denah"
+                    className={`block px-4 py-2 ${
+                      pathname === "/denah"
+                        ? "text-gray-500"
+                        : "text-black hover:text-gray-500"
+                    }`}
+                    onClick={handleLinkClick}
+                  >
+                    Denah
+                  </Link>
+                  <Link
+                    href="/peta"
+                    className={`block px-4 py-2 ${
+                      pathname === "/peta"
+                        ? "text-gray-500"
+                        : "text-black hover:text-gray-500"
+                    }`}
+                    onClick={handleLinkClick}
+                  >
+                    Peta
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Right side - Contact Button */}
+            <div className="hidden md:block border">
+              <Link
+                href="/kontak"
+                className={`border px-4 py-2 rounded-lg transition ${
+                  pathname === "/kontak"
+                    ? "bg-primary text-white"
+                    : "bg-white border-2 border-gray-950 text-black hover:bg-primary hover:border-white hover:text-white hover:shadow-lg hover:shadow-primary hover:text-shadow-lg transition-all duration-500 ease-in-out"
+                }`}
+                onClick={handleLinkClick}
+              >
+                Kontak
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button 
+            <button
               className="text-black hover:text-gray-500"
               onClick={playClickSound}
             >

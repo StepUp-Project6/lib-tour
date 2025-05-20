@@ -6,17 +6,17 @@ const LayoutList = () => {
         {
             name : "🏛 Lantai 1",
             image : "/images/layout/lantai-1/main.png",
-            link : "/layout/lantai-1"
+            link : "/images/profile/dummy.png"
         },
         {
             name : "🏢 Lantai 2",
             image : "/images/layout/lantai-2/main.png",
-            link : "/layout/lantai-2"
+            link : "/images/profile/dummy.png"
         },
         {
             name : "🌳 Bagian Luar",
             image : "/images/layout/luar/main.png",
-            link : "/layout/bagian-luar"
+            link : "/images/profile/dummy.png"
         },
     ]
   return (

@@ -18,10 +18,11 @@ const HeroSection = () => {
         kapan saja.
       </p>
       <Link
-        href="/about/library"
+        href="/tentang/perpustakaan"
         type="button"
         className="w-fit bg-primary text-white  rounded-lg py-3 px-[26px] hover:border hover:border-white hover:shadow-lg  hover:shadow-primary hover:text-shadow-lg transition-all duration-500 ease-in-out"
         onClick={playClickSound}
+        
       >
         Explore
       </Link>

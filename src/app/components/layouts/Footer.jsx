@@ -18,7 +18,7 @@ const Footer = () => {
             <span className="text-primary">{` assyfawirdya123@gmail.com`}</span>
           </h5>
           <div className="pt-10 mb-8">
-            <Image src="/images/upn-logo.png" width={183} height={157} alt="" />
+            <Image src="/images/upn-logo.png" width={153} height={127} alt="" />
           </div>
           <h6 className="text-xl mb-4">{`TEKNIK GEOMATIKA UPN “VETERAN” YOGYAKARTA`}</h6>
           <p className="font-normal">{`2025 LibTour. All Rights Reserved`}</p>
